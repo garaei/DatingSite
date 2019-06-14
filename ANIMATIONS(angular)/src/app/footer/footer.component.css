@@ -1,0 +1,19 @@
+.right{
+float: left;
+}
+.left{
+    float: right;
+    }
+    .all{
+        align: center;
+    }
+    .container {
+        width: auto;
+        max-width: 637px;
+        padding: 0 4px;
+        height: 5px;
+      }
+      
+      .footer {
+        background-color: burlywood;
+      }

@@ -1,0 +1,61 @@
+<div class="row pt-3">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header" style="background-color:lightslategrey">
+            <h2 class="mb-0" style="text-align:center;color:blue">NEWS & UPDATES</h2>
+        </div>
+    <div class="card-body">
+<form class="form"  [formGroup]="newsForm">
+    <div class="form-group">
+        <label for="date"><b>DATE  :</b></label>
+        <input type="date"   [class.is-invalid]="s.invalid && s.touched"  formControlName="date" class="form-control" id="date" placeholder="" required readonly>
+       
+      </div>
+
+      <div class="form-group">
+          <label for="exampleFormControlSelect2"><b>POSTED BY  :</b></label>
+          <select class="form-control"  [class.is-invalid]="g.invalid && g.touched" formControlName="postedby" id="exampleFormControlSelect2">
+            <option>nelson(admin1)</option>
+            <option>admin2(2)</option>
+            <option>admin3</option>
+            <option>admin4</option>
+            <option>admin4</option>
+            <option>admin5</option>
+          </select>
+          <div *ngIf="g.invalid && g.touched" style="background-color:darkslategray">
+              <span *ngIf="g.errors?.required" class="text-danger">Select an option please!!! </span>
+            
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="name"><b>NEW'S TITLE OR HEADING   :</b></label>
+            <input type="text"  [class.is-invalid]="b.invalid && b.touched"  formControlName="title" class="form-control" id="name" placeholder="" required>
+            <div *ngIf="b.invalid && b.touched" style="background-color:darkslategray">
+                <span *ngIf="b.errors?.required" class="text-danger">Titlle is required !!! </span>
+                <span *ngIf="b.errors?.minlength" class="text-danger">Title should be atleast 5 characters </span>
+                </div>
+          </div>
+      <div class="form-group">
+          <label for="pic"><b>ATTACH ANY PHOTO OR FILE RELATED   :</b></label>
+          <input type="file"  [class.is-invalid]="a.invalid && a.touched"  formControlName="newsfile" class="form-control" id="photo" placeholder="" required>
+          <div *ngIf="a.invalid && a.touched" style="background-color:darkslategray">
+              <span *ngIf="a.errors?.required" class="text-danger">Select a file to upload  !!! </span>
+             
+              </div>
+        </div>
+      <div class="form-group">
+            <label for="uaself"><b>TYPE YOUR UPDATES & NEWS HERE:</b></label>
+            <textarea id="problem"  [class.is-invalid]="f.invalid && f.touched"   formControlName="news" class="form-control" required>BE BRIEF PLEASE !!!!!</textarea>
+            <div *ngIf="f.invalid && f.touched" style="background-color:darkslategray">
+                <span *ngIf="f.errors?.required" class="text-danger">Blank news or updates not allowed!!! </span>
+                <span *ngIf="f.errors?.minlength" class="text-danger">Enter valid  Infomation</span>
+                </div>
+          </div>
+   
+    <button type="submit" class="btn btn-primary">POST PROBLEM  </button>
+  
+  </form>
+</div>
+</div>
+</div>
+</div>

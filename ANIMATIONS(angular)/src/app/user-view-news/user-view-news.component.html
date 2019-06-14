@@ -1,0 +1,39 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+    <thead>
+      <tr>
+        <th>NEWS ID</th>
+        <th>DATE POSTED</th>
+        <th>NEWS TITLE</th>
+        <th>NEWS</th>
+        <th>POSTED BY</th>
+        <th>PICTURE/IMAGE</th>
+        <th>ACTION</th>
+      </tr>
+    </thead>
+    <!-- <tbody *ngIf="news?.length != 0"> -->
+      <tbody>
+        <tr>
+            <td>1</td>
+            <td>19/04/2019</td>
+            <td>wedding of two</td>
+            <td>the wedding is between you and him</td>
+            <td>admi1</td>
+            <td>allowed.png</td>
+            <td><button class="btn btn-primary">COMMENT</button></td>
+        </tr>
+        <tr *ngFor="let new of news">
+            <td>{{ new.id }}</td>
+            <td>{{ new.date }}</td>
+            <td>{{ new.title }}</td>
+            <td>{{ new.news }}</td>
+            <td>{{ new.postedby }}</td>
+            <td>{{ new.newsfile }}</td>
+            <td><button class="btn btn-primary">COMMENT</button></td>
+        </tr>
+    </tbody>
+    <!-- <tbody *ngIf="news?.length == 0">
+      <tr>
+        <td colspan="3" class="no-data-available">No data on your Search!</td>
+      </tr>
+    <tbody> -->
+  </table>

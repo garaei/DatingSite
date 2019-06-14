@@ -1,0 +1,67 @@
+<div class="row pt-3">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header" style="background-color:lightslategrey">
+            <h2 class="mb-0" style="text-align:center;color:blue">SET PROFILE DETAILS</h2>
+        </div>
+    <div class="card-body">
+<form class="form" [formGroup]="userForm">
+    
+    <div class="form-group">
+      <label for="pic"><b>UPLOAD PROFILE PHOTO  :</b></label>
+      <input type="file"   [class.is-invalid]="a.invalid && a.touched" formControlName="photo" class="form-control" id="photo" placeholder="" required>
+      <div *ngIf="a.invalid && a.touched" style="background-color:darkslategray">
+          <span *ngIf="f.get('photo').errors?.required" class="text-danger">Select a photo to upload   !!! </span>
+         
+          </div>
+    </div>
+    <div class="form-group">
+      <label for="name"><b>FULL NAME   :</b></label>
+      <input type="text"   [class.is-invalid]="b.invalid && b.touched"  formControlName="fullname" class="form-control" id="name" placeholder="" required>
+      <div *ngIf="b.invalid && b.touched" style="background-color:darkslategray">
+          <span *ngIf="b.errors?.required" class="text-danger">Fullname is required !!! </span>
+          <span *ngIf="b.errors?.minlength" class="text-danger">Name should be atleast 5 characters </span>
+          </div>
+    
+    </div>
+    <div class="form-group">
+        <label for="date"><b>DATE OF BIRTH  :</b></label>
+        <input type="date"   [class.is-invalid]="c.invalid && c.touched"  formControlName="dob" class="form-control" id="dob" placeholder="" required>
+        <div *ngIf="c.invalid && c.touched" style="background-color:darkslategray">
+            <span *ngIf="c.errors?.required" class="text-danger">Select your Date of Birth !!! </span>
+           
+            </div>
+      </div>
+    
+      <div class="form-group">
+          <label for="hobbies"><b>HOBBIES & TALENTS  :</b></label>
+          <textarea id="hobbies"   [class.is-invalid]="d.invalid && d.touched"  formControlName="hobbies"  class="form-control" required>BE BRIEF PLEASE !!!!!</textarea>
+          <div *ngIf="d.invalid && d.touched" style="background-color:darkslategray">
+              <span *ngIf="d.errors?.required" class="text-danger">Enter your Hobbies and Talents !!! </span>
+              <span *ngIf="d.errors?.minlength" class="text-danger">Enter a valid information !!! </span>
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="likes"><b>LIKES & DISLIKES  :</b></label>
+            <textarea id="likes"   [class.is-invalid]="e.invalid && e.touched"  formControlName="likes" class="form-control" required>BE BRIEF PLEASE !!!!!</textarea>
+            <div *ngIf="e.invalid && e.touched" style="background-color:darkslategray">
+                <span *ngIf="e.errors?.required" class="text-danger">Enter your Likes & Dislikes  !!! </span>
+                <span *ngIf="e.errors?.minlength" class="text-danger">Enter a valid information !!! </span>
+                </div>
+          </div>
+        <div class="form-group">
+            <label for="uaself"><b>CHOICE OF YOUR PARTNER(age ,complection,religion,behaviours,height, body weight )  :</b></label>
+            <textarea id="uaself"   [class.is-invalid]="f.invalid && f.touched"  formControlName="uaself" class="form-control" required>BE BRIEF PLEASE !!!!!</textarea>
+            <div *ngIf="f.invalid && f.touched" style="background-color:darkslategray">
+                <span *ngIf="f.errors?.required" class="text-danger">Enter your is partners characteristics choices !!! </span>
+                <span *ngIf="f.errors?.minlength" class="text-danger">Enter a valid information !!! </span>
+                </div>
+          </div>
+   
+    <button type="submit" class="btn btn-primary">UPLOAD MY PROFILE </button>
+  
+  </form>
+</div>
+</div>
+</div>
+</div>

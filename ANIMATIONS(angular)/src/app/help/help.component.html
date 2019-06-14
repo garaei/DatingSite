@@ -1,0 +1,50 @@
+<div class="row pt-3">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header" style="background-color:lightslategrey">
+            <h2 class="mb-0" style="text-align:center;color:blue">HELP PAGE</h2>
+        </div>
+    <div class="card-body">
+<form class="form"  [formGroup]="helpForm">
+
+
+    <div class="form-group">
+        <label for="name"><b>PHONE NUMBER   :</b></label>
+        <input type="text"  [class.is-invalid]="c.invalid && c.touched"   formControlName="phone" class="form-control" id="phone" placeholder="" required>
+        <div *ngIf="c.invalid && c.touched" style="background-color:darkslategray">
+            <span *ngIf="c.errors?.required" class="text-danger">Phone Number is required !!! </span>
+            <span *ngIf="c.errors?.minlength" class="text-danger">Phone Number should be atleast 10 characters </span>
+            <span *ngIf="c.errors?.maxlength" class="text-danger">Phone Number should be atmost 12 characters </span>
+            </div>
+      </div>
+      <div class="form-group">
+          <label for="name"><b>EMAIL ADDRESS   :</b></label>
+          <input type="email"  [class.is-invalid]="e.invalid && e.touched"   formControlName="email" class="form-control" id="email" placeholder="" required>
+          <div *ngIf="e.invalid && e.touched" style="background-color:darkslategray">
+              <span *ngIf="e.errors?.required" class="text-danger">Email Address is Required !!! </span>
+              <span *ngIf="e.errors?.email" class="text-danger">Invalid Email Address(eg xxxx@xxx.com) !! </span>
+              </div>
+        </div>
+      <div class="form-group">
+          <label for="date"><b>DATE  :</b></label>
+          <input type="date"   formControlName="date" class="form-control" id="date" placeholder="" required readonly>
+         
+        </div>
+
+
+        <div class="form-group">
+            <label for="uaself"><b>TYPE YOUR PROBLEM HERE:</b></label>
+            <textarea id="problem"  [class.is-invalid]="f.invalid && f.touched"   formControlName="problem" class="form-control" required>BE BRIEF PLEASE !!!!!</textarea>
+            <div *ngIf="f.invalid && f.touched" style="background-color:darkslategray">
+                <span *ngIf="f.errors?.required" class="text-danger">Type a problem for help!!! </span>
+                <span *ngIf="f.errors?.minlength" class="text-danger">Enter valid problem Infomation</span>
+                </div>
+          </div>
+   
+    <button type="submit" class="btn btn-primary">POST PROBLEM  </button>
+  
+  </form>
+</div>
+</div>
+</div>
+</div>

@@ -1,0 +1,95 @@
+<table datatable [dtOptions]="dtOptions" class="row-border hover">
+  <thead>
+    <tr>
+      <th>COMMENT ID</th>
+      <th>DATE POSTED</th>
+      <th>COMMENT </th>
+      <th>COMMENT POSTED BY</th>
+      <th>ACTIONS</th>
+    </tr>
+  </thead>
+  <!-- <tbody *ngIf="news?.length != 0"> -->
+    <tbody>
+      <tr>
+          <td>1</td>
+          <td>09/14/2018</td>
+          <td>THIS IS THE COMMENT</td>
+          <td>NELLYoNE</td>
+         
+          <td><button class="btn btn-primary">READ</button>
+            <button class="btn btn-danger">DELETE</button>
+            <button class="btn btn-primary">REPLY</button></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>09/03/2019</td>
+        <td>THIS IS THE COMMENT 2</td>
+        <td>VINN ME</td>
+       
+        <td><button class="btn btn-primary">READ</button>
+          <button class="btn btn-danger">DELETE</button>
+          <button class="btn btn-primary">REPLY</button></td>
+    </tr>
+      <tr *ngFor="let comment of comm">
+          <td>{{comment.id}}</td>
+          <td>{{ comment.date }}</td>
+          <td>{{comment.comment }}</td>
+          <td>{{comment.postedby }}</td>
+         
+          <td><button class="btn btn-primary">READ</button>
+            <button class="btn btn-danger">DELETE</button>
+            <button class="btn btn-primary">REPLY</button></td>
+      </tr>
+  </tbody>
+  <!-- <tbody *ngIf="news?.length == 0">
+    <tr>
+      <td colspan="3" class="no-data-available">No data on your Search!</td>
+    </tr>
+  <tbody> -->
+</table>
+
+<form class="form"  >
+    <div class="form-group md-col-4">
+        <label for="date"><b>DATE  :</b></label>
+        <input type="date"   [class.is-invalid]="s.invalid && s.touched"  formControlName="date" class="form-control" id="date" placeholder="" required>
+       
+      </div>
+
+  <table datatable [dtOptions]="dtOptions" class="row-border hover">
+      <thead>
+          <tr>
+            <th>COMMENT ID</th>
+            <th>DATE POSTED</th>
+            <th>COMMENT </th>
+            <th>COMMENT POSTED BY</th>
+            <th>ACTIONS</th>
+          </tr>
+        </thead>
+        <!-- <tbody *ngIf="news?.length != 0"> -->
+          <tbody>
+            <tr>
+                <td>1</td>
+                <td>09/14/2018</td>
+                <td>THIS IS THE COMMENT</td>
+                <td>NELLYoNE</td>
+               
+                <td><button class="btn btn-primary">READ</button>
+                  <button class="btn btn-danger">DELETE</button>
+                  <button class="btn btn-primary">REPLY</button></td>
+            </tr>
+    
+            <tr *ngFor="let comment of comm">
+                <td>{{comment.id}}</td>
+                <td>{{ comment.date }}</td>
+                <td>{{comment.comment }}</td>
+                <td>{{comment.postedby }}</td>
+               
+                <td><button class="btn btn-primary">READ</button>
+                  <button class="btn btn-danger">DELETE</button>
+                  <button class="btn btn-primary">REPLY</button></td>
+            </tr>
+        </tbody>
+    
+    </table>
+</form>
+

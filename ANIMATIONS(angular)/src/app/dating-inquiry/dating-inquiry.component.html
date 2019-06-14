@@ -1,0 +1,99 @@
+<div class="row pt-3">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header" style="background-color:lightslategrey">
+            <h2 class="mb-0" style="text-align:center;color:blue">LOVE PARTNER INQUIRY</h2>
+        </div>
+    <div class="card-body">
+<form class="form" [formGroup]="datingInquiryForm" style="overflow: scroll">
+    
+    <div class="form-group">
+      <label for="pic"><b>UPLOAD YOUR RECENT PHOTO  :</b></label>
+      <input type="file"  [class.is-invalid]="a.invalid && a.touched"  formControlName="photo" class="form-control" id="photo" placeholder="" required>
+      <div *ngIf="a.invalid && a.touched" style="background-color:darkslategray">
+          <span *ngIf="a.errors?.required" class="text-danger">Select a photo to upload  !!! </span>
+         
+          </div>
+    </div>
+    <div class="form-group">
+      <label for="name"><b>FULL NAME   :</b></label>
+      <input type="text"  [class.is-invalid]="b.invalid && b.touched"  formControlName="fullname" class="form-control" id="name" placeholder="" required>
+      <div *ngIf="b.invalid && b.touched" style="background-color:darkslategray">
+          <span *ngIf="b.errors?.required" class="text-danger">Full Name is required !!! </span>
+          <span *ngIf="b.errors?.minlength" class="text-danger">Full Name should be atleast 5 characters </span>
+          </div>
+    </div>
+    <div class="form-group">
+        <label for="name"><b>PHONE NUMBER   :</b></label>
+        <input type="text" [class.is-invalid]="c.invalid && c.touched"  formControlName="phone" class="form-control" id="phone" placeholder="" required>
+        <div *ngIf="c.invalid && c.touched" style="background-color:darkslategray">
+            <span *ngIf="c.errors?.required" class="text-danger">Phone Number is required !!! </span>
+            <span *ngIf="c.errors?.minlength" class="text-danger">Phone Number should be atleast 10 characters </span>
+            <span *ngIf="c.errors?.maxlength" class="text-danger">Phone Number should be atmost 12 characters </span>
+            </div>
+      </div>
+      <div class="form-group">
+          <label for="name"><b>EMAIL ADDRESS   :</b></label>
+          <input type="email" [class.is-invalid]="d.invalid && d.touched"  formControlName="email" class="form-control" id="email" placeholder="" required>
+          <div *ngIf="d.invalid && d.touched" style="background-color:darkslategray">
+              <span *ngIf="d.errors?.required" class="text-danger">Email is required !!! </span>
+              <span *ngIf="d.errors?.email" class="text-danger">Invalid Email Address(eg xxxx@xxx.com) </span>
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="name"><b>DATE    :</b></label>
+            <input type="date" [class.is-invalid]="e.invalid && e.touched"  formControlName="date" class="form-control" id="date" placeholder="" required readonly>
+            <div *ngIf="e.invalid && e.touched" style="background-color:darkslategray">
+                <span *ngIf="e.errors?.required" class="text-danger"> Date is required!!! </span>
+               
+                </div>
+          </div>
+    <div class="form-group">
+        <label for="date"><b>LOCALITY(COUNTY/DISTRICT/VILLAGE)  :</b></label>
+        <input type="text"  [class.is-invalid]="f.invalid && f.touched"  formControlName="locality" class="form-control" id="locality" placeholder="" required>
+        <div *ngIf="f.invalid && f.touched" style="background-color:darkslategray">
+            <span *ngIf="f.errors?.required" class="text-danger">Locality Infomation Required!!! </span>
+            <span *ngIf="f.errors?.minlength" class="text-danger">Enter valid locality Infomation</span>
+            </div>
+      </div>
+      <div class="form-group">
+          <label for="exampleFormControlSelect2"><b>EMPLOYMENT STATUS  :</b></label>
+          <select class="form-control"  [class.is-invalid]="g.invalid && g.touched" formControlName="empoloyment" id="exampleFormControlSelect2">
+            <option>SELF EMPLOYED</option>
+            <option>PART TIME EMLOYED</option>
+            <option>FULL TIME EMPLOYED</option>
+            <option>SEARCHING FOR EMPLOYMENT</option>
+            <option>NOT EMPLOYED</option>
+            <option>NONE OF THE ABOVE</option>
+          </select>
+          <div *ngIf="g.invalid && g.touched" style="background-color:darkslategray">
+              <span *ngIf="g.errors?.required" class="text-danger">Select an option please!!! </span>
+            
+              </div>
+        </div>
+        <div class="form-group">
+            <label for="date"><b>ETHNICITY YOU PREFER FOR YOUR PARTNER  :</b></label>
+            <input type="text" [class.is-invalid]="h.invalid && h.touched"  formControlName="ethnicity" class="form-control" id="locality" placeholder="Luo/kikuyu/nandi/teso/kamba/etc" required>
+            <div *ngIf="h.invalid && h.touched" style="background-color:darkslategray">
+                <span *ngIf="h.errors?.required" class="text-danger">Ethnicity Details Required!!! </span>
+                <span *ngIf="h.errors?.minlength" class="text-danger">Enter Valid Details Please!!!!! </span>
+                </div>
+          </div>
+          <div class="form-group">
+              <label for="likes"><b>DESCRIBE YOUR PREFERED QUALITIES OF YOUR PARTNER  :</b></label>
+              <textarea id="likes"  [class.is-invalid]="i.invalid && i.touched"  formControlName="likes" class="form-control"  placeholder="complextion,religion,weight,body size,behaviours etc" required></textarea>
+              <div *ngIf="i.invalid && i.touched" style="background-color:darkslategray">
+                  <span *ngIf="i.errors?.required" class="text-danger"> Qualities Details Required!!! </span>
+                  <span *ngIf="i.errors?.minlength" class="text-danger"> Enter Valid details Please!!!!</span>
+                  </div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">POST LOVE INQUIRY </button>
+            </div>
+            
+  
+    </form>
+  </div>
+  </div>
+  </div>
+  </div>
